@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Bobby Right Back: The Blog</h1>
+  <%= link_to 'New Article', new_article_path %>
 </div>
 
 <%= content_tag_for(:div, @articles) do |article| %>
@@ -10,5 +11,11 @@
     <p>
       <%= article.content %>
     </p>
+
+    <%= link_to 'View', article_path(article) %>
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Delete', article_path(article),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>
