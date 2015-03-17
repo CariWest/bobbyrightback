@@ -1,2 +1,14 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<div class="container">
+  <h1>Bobby Right Back: The Blog</h1>
+</div>
+
+<%= content_tag_for(:div, @articles) do |article| %>
+  <div class="container">
+    <h3>
+      <%= article.title %>
+    </h3>
+    <p>
+      <%= article.content %>
+    </p>
+  </div>
+<% end %>
