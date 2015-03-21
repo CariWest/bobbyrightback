@@ -43,8 +43,11 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+  gem 'database_cleaner'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'factory_girl'
+  gem 'nyan-cat-formatter'
 end
 
