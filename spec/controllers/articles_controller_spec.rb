@@ -1,19 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe ArticlesController, type: :controller do
+describe ArticlesController do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
+  let!(:article) { Article.create(title: "dad", content: "is awesome") }
+
+  before(:each) do
+    get :index
   end
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
+  it 'returns a status of 200' do
+    expect(response.status).to eq 200
   end
 
+  it 'assigns the @articles instance variable' do
+    expect(assigns :articles).to be_a Article::ActiveRecord_Relation
+  end
+
+  # how do I test the content of @articles?
+
+  # it 'assigns the content of the @articles instance variable' do
+  #   expect(response.body).to eq article
+  # end
 end
