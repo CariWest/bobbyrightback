@@ -23,4 +23,19 @@ var setEventListenerForArticleForm = function() {
 
 $(document).ready(function() {
   setEventListenerForArticleForm();
+
+  $('.articles_form').on('submit', function(event) {
+    event.preventDefault();
+
+    var formData = {
+      title: $("input[name='Title']").val(),
+      content: $("input[name='Content']").val()
+    }
+
+    $.ajax({
+      url: '/articles',
+      type: 'post',
+      data: formData,
+    });
+  });
 });
