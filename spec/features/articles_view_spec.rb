@@ -8,7 +8,8 @@ describe Article, :js => true do
 
   it "adds a form to the page to create a new article" do
     visit articles_path
-    click_on
+    click_button('New Article')
+    expect(page).to have_selector('form')
   end
 
   # capybara matchers
