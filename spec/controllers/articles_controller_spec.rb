@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe ArticlesController do
 
+  # not working with FactoryGirl?
   let!(:article) { Article.create(title: "dad", content: "is awesome") }
 
   before(:each) do
@@ -13,12 +14,6 @@ describe ArticlesController do
   end
 
   it 'assigns the @articles instance variable' do
-    expect(assigns :articles).to be_a Article::ActiveRecord_Relation
+    expect(assigns :articles).to include article
   end
-
-  # how do I test the content of @articles?
-
-  # it 'assigns the content of the @articles instance variable' do
-  #   expect(response.body).to eq article
-  # end
 end
