@@ -12,10 +12,17 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    puts "*" * 50
+    puts "inside create"
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article
+      paths = {
+        show: article_path(@article),
+        edit: edit_article_path(@article),
+        destroy: article_path(@article)
+      }
+      render :json => { article: @article, paths: paths }
     else
       render 'new'
     end
@@ -38,6 +45,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
+    p params
     params.require(:article).permit(:title, :content)
   end
 end

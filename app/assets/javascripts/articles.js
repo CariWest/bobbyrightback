@@ -1,5 +1,5 @@
 var setEventListenerForArticleForm = function() {
-  $('.new_article').on('click', function(event) {
+  $('.new_article_button').on('click', function(event) {
     event.preventDefault();
 
     var request = $.ajax({
@@ -24,18 +24,19 @@ var setEventListenerForArticleForm = function() {
 $(document).ready(function() {
   setEventListenerForArticleForm();
 
-  $('.articles_form').on('submit', function(event) {
+  $('.new_article').on('submit', function(event) {
     event.preventDefault();
 
-    var formData = {
-      title: $("input[name='Title']").val(),
-      content: $("input[name='Content']").val()
-    }
+    var formData = $(this).find(':input').serialize();
+    var myUrl = $(this).attr('action');
+    var myMethod = $(this).attr('method');
+
+    debugger
 
     $.ajax({
-      url: '/articles',
-      type: 'post',
-      data: formData,
+      url: myUrl,
+      type: myMethod,
+      data: { article: formData }
     });
   });
 });
