@@ -1,13 +1,11 @@
 
-<div class="container">
-  <div class="blog-header">
-    <h1 class="blog-title">Bobby Right Back</h1>
-    <p class="lead blog-description">The Blog.</p>
-    <%= button_to 'New Article', new_article_path, class: "new_article_button" %>
-  </div>
+<div class="blog-header">
+  <h1 class="blog-title">Bobby Right Back</h1>
+  <p class="lead blog-description">The Blog.</p>
+  <%= button_to 'New Article', new_article_path, class: "new_article_button" %>
 </div>
 
-<div class="container articles_form" style="display: none;" >
+<div class="articles_form" style="display: none;" >
   <form class="new_article" id="new_article" action="/articles" method="post" >
   <!-- <form action="/articles" method="post" > -->
     <h3>New Blog Entry</h3>
@@ -21,19 +19,21 @@
   </form>
 </div>
 
-<%= content_tag_for(:div, @articles) do |article| %>
-  <div class="container">
-    <h3>
-      <%= article.title %>
-    </h3>
-    <p>
-      <%= article.content %>
-    </p>
+<div class="row">
+  <%= content_tag_for(:div, @articles, :class => "col-sm-8 blog-main") do |article| %>
+    <div class="blog-post">
+      <h2 class="blog-post-title">
+        <%= article.title %>
+      </h2>
+      <p>
+        <%= article.content %>
+      </p>
 
-    <%= link_to 'View', article_path(article) %>
-    <%= link_to 'Edit', edit_article_path(article) %>
-    <%= link_to 'Delete', article_path(article),
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' } %>
-  </div>
-<% end %>
+      <%= link_to 'View', article_path(article) %>
+      <%= link_to 'Edit', edit_article_path(article) %>
+      <%= link_to 'Delete', article_path(article),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
