@@ -1,16 +1,21 @@
-<div class="container banner">
-  <h1>Bobby Right Back: The Blog</h1>
-  <%= button_to 'New Article', new_article_path, class: "new_article" %>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Bobby Right Back</h1>
+    <p class="lead blog-description">The Blog.</p>
+    <%= button_to 'New Article', new_article_path, class: "new_article_button" %>
+  </div>
 </div>
 
 <div class="container articles_form" style="display: none;" >
-  <form action="/articles" method="post" >
+  <form class="new_article" id="new_article" action="/articles" method="post" >
+  <!-- <form action="/articles" method="post" > -->
     <h3>New Blog Entry</h3>
     <p>
-      <input type="text" name="Title" size="100" placeholder="Title" class="title" />
+      <input type="text" name="title" size="100" placeholder="Title" />
     </p>
     <p>
-      <textarea name="Content" class="content" rows="20" cols="100" placeholder="What's on your mind?"></textarea>
+      <textarea name="content" rows="20" cols="100" placeholder="What's on your mind?"></textarea>
     </p>
     <input type="submit" value="Publish" class="create_article" />
   </form>
