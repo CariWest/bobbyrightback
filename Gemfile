@@ -47,7 +47,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'nyan-cat-formatter'
 end
 
