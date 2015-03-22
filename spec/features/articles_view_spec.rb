@@ -6,6 +6,11 @@ describe Article, :js => true do
     expect(page).to have_content('New Article')
   end
 
+  it "adds a form to the page to create a new article" do
+    visit articles_path
+    click_on
+  end
+
   # capybara matchers
   # capybara finders
 end
