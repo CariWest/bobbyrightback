@@ -2,7 +2,7 @@
 <div class="blog-header">
   <h1 class="blog-title">Bobby Right Back</h1>
   <p class="lead blog-description">The Blog.</p>
-  <%= button_to 'New Article', new_article_path, class: "new_article_button" %>
+  <%= button_to 'New Article', new_article_path, class: "new_article_button btn btn-default" %>
 </div>
 
 <div class="articles_form" style="display: none;" >
@@ -15,7 +15,7 @@
     <p>
       <textarea name="content" class="form-control" rows="20" placeholder="What's on your mind?"></textarea>
     </p>
-    <input type="submit" value="Publish" class="create_article" />
+    <input type="submit" class="btn btn-default" value="Publish" class="create_article" />
   </form>
 </div>
 
