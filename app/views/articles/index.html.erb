@@ -1,6 +1,19 @@
-<div class="container">
+<div class="container banner">
   <h1>Bobby Right Back: The Blog</h1>
   <%= button_to 'New Article', new_article_path, class: "new_article" %>
+</div>
+
+<div class="container articles_form" style="display: none;" >
+  <form action="/questions" method="post" >
+    <h3>New Blog Entry</h3>
+    <p>
+      <input type="text" name="Title" size="100" placeholder="Title" />
+    </p>
+    <p>
+      <textarea name="Content" rows="20" cols="100" placeholder="What's on your mind?"></textarea>
+    </p>
+    <input type="submit" value="Publish" />
+  </form>
 </div>
 
 <%= content_tag_for(:div, @articles) do |article| %>
