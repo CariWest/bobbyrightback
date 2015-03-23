@@ -36,8 +36,8 @@ $(document).ready(function() {
     request = $.ajax({
       url: '/articles',
       type: 'post',
-      dataType: 'JSON',
-      data: { "question": formData }
+      // dataType: 'JSON',
+      data: formData
     });
 
     request.done(function(){

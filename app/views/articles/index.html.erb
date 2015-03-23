@@ -6,37 +6,7 @@
 </div>
 
 <div class="articles_form" style="display: none;" >
-  <%# render 'form' %>
-    <%= form_for :article do |f| %>
-      <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-      </p>
-      <p>
-        <%= f.label :content %>
-        <%= f.text_area :content %>
-      </p>
-      <%= f.submit "Create Article" %>
-    <%end %>
-
-<!--   <form class="new_article" id="new_article" action="/articles" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓">
-    <input type="hidden" name="authenticity_token" value="SD61LVguNgGZ2aeMGyYiUbyKqZ1/y+oBVvLQTOQNtqdAnM+1tRt/lue14CezTNUCuO87A77UBaeBF73nmyLThw==">
-
-    <p>
-      <label for="article_title">Title</label><br>
-      <input type="text" name="article[title]" id="article_title">
-    </p>
-
-    <p>
-      <label for="article_content">Content</label><br>
-      <textarea name="article[content]" id="article_content"></textarea>
-    </p>
-
-    <p>
-      <input type="submit" name="commit" value="Create Article">
-    </p>
-
-  </form> -->
+  <%= render 'form' %>
 </div>
 
 <div class="row">
