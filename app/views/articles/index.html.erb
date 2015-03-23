@@ -29,21 +29,19 @@
 </div>
 
 <script type="text/x=handlebars-template" id="article_template">
-  <div class="row">
 
-    <div class="article col-sm-8 blog-main" id="article_{{article.id}}">
-        <div class="blog-post">
-          <h2 class="blog-post-title">
-            {{article.title}}
-          </h2>
-          <p>
-            {{article.content}}
-          </p>
+  <div class="article col-sm-8 blog-main" id="article_{{article.id}}">
+      <div class="blog-post">
+        <h2 class="blog-post-title">
+          {{article.title}}
+        </h2>
+        <p>
+          {{article.content}}
+        </p>
 
-          <a href="/articles/{{article.id}}">View</a>
-          <a href="/articles/{{article.id}}/edit">Edit</a>
-          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/articles/{{article.id}}">Delete</a>
-        </div>
-    </div>
+        <a href="/articles/{{article.id}}">View</a>
+        <a href="/articles/{{article.id}}/edit">Edit</a>
+        <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/articles/{{article.id}}">Delete</a>
+      </div>
   </div>
 </script>
