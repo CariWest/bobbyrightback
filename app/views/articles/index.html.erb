@@ -9,7 +9,7 @@
   <%= render 'form' %>
 </div>
 
-<div class="row">
+<div class="row all-blog-posts">
   <%= content_tag_for(:div, @articles, :class => "col-sm-8 blog-main") do |article| %>
     <div class="blog-post">
       <h2 class="blog-post-title">
@@ -28,21 +28,21 @@
   <% end %>
 </div>
 
-<script type="text/x=handlebars-template" id="blog_template">
+<script type="text/x=handlebars-template" id="article_template">
   <div class="row">
 
-    <div class="article col-sm-8 blog-main" id="article_{{id}}">
+    <div class="article col-sm-8 blog-main" id="article_{{article.id}}">
         <div class="blog-post">
           <h2 class="blog-post-title">
-            {{title}}
+            {{article.title}}
           </h2>
           <p>
-            {{content}}
+            {{article.content}}
           </p>
 
-          <a href="/articles/{{id}}">View</a>
-          <a href="/articles/{{id}}/edit">Edit</a>
-          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/articles/{{id}}">Delete</a>
+          <a href="/articles/{{article.id}}">View</a>
+          <a href="/articles/{{article.id}}/edit">Edit</a>
+          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/articles/{{article.id}}">Delete</a>
         </div>
     </div>
   </div>

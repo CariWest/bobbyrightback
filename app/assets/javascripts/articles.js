@@ -17,6 +17,13 @@ var setEventListenerForArticleForm = function() {
   });
 }
 
+var addArticleToPage = function(articleData) {
+  var context = { article: articleData }
+  var html = $('#article_template').html();
+  var articleTemplate = Handlebars.compile(html);
+  $('.all-blog-posts').prepend(articleTemplate(context));
+}
+
 // var setListenerForNewArticle = function() {
 //   $('.articles_form').on('submit')
 // }
@@ -37,8 +44,10 @@ $(document).ready(function() {
       data: formData
     });
 
-    request.done(function(){
+    request.done(function(response){
       console.log('winning');
+      addArticleToPage(response.article);
+      debugger
     });
 
     request.fail(function(){
