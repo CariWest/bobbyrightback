@@ -31,12 +31,9 @@ $(document).ready(function() {
     var myUrl = $(this).attr('action');
     var myMethod = $(this).attr('method');
 
-    debugger
-
     request = $.ajax({
       url: '/articles',
       type: 'post',
-      // dataType: 'JSON',
       data: formData
     });
 

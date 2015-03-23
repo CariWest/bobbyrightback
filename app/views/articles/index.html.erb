@@ -5,7 +5,7 @@
   <%= button_to 'New Article', new_article_path, class: "new_article_button btn btn-default" %>
 </div>
 
-<div class="articles_form" style="display: none;" >
+<div class="articles_form" style="display: none;">
   <%= render 'form' %>
 </div>
 
@@ -27,3 +27,23 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/x=handlebars-template" id="blog_template">
+  <div class="row">
+
+    <div class="article col-sm-8 blog-main" id="article_{{id}}">
+        <div class="blog-post">
+          <h2 class="blog-post-title">
+            {{title}}
+          </h2>
+          <p>
+            {{content}}
+          </p>
+
+          <a href="/articles/{{id}}">View</a>
+          <a href="/articles/{{id}}/edit">Edit</a>
+          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/articles/{{id}}">Delete</a>
+        </div>
+    </div>
+  </div>
+</script>
