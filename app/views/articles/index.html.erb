@@ -6,17 +6,37 @@
 </div>
 
 <div class="articles_form" style="display: none;" >
-  <form class="new_article" id="new_article" action="/articles" method="post" >
-  <!-- <form action="/articles" method="post" > -->
-    <h3>New Blog Entry</h3>
+  <%# render 'form' %>
+    <%= form_for :article do |f| %>
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </p>
+      <%= f.submit "Create Article" %>
+    <%end %>
+
+<!--   <form class="new_article" id="new_article" action="/articles" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓">
+    <input type="hidden" name="authenticity_token" value="SD61LVguNgGZ2aeMGyYiUbyKqZ1/y+oBVvLQTOQNtqdAnM+1tRt/lue14CezTNUCuO87A77UBaeBF73nmyLThw==">
+
     <p>
-      <input type="text" name="title" class="form-control" placeholder="Title" />
+      <label for="article_title">Title</label><br>
+      <input type="text" name="article[title]" id="article_title">
     </p>
+
     <p>
-      <textarea name="content" class="form-control" rows="20" placeholder="What's on your mind?"></textarea>
+      <label for="article_content">Content</label><br>
+      <textarea name="article[content]" id="article_content"></textarea>
     </p>
-    <input type="submit" class="btn btn-default" value="Publish" class="create_article" />
-  </form>
+
+    <p>
+      <input type="submit" name="commit" value="Create Article">
+    </p>
+
+  </form> -->
 </div>
 
 <div class="row">

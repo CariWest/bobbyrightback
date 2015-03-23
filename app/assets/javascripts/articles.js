@@ -27,16 +27,25 @@ $(document).ready(function() {
   $('.new_article').on('submit', function(event) {
     event.preventDefault();
 
-    var formData = $(this).find(':input').serialize();
+    var formData = $(this).serialize(); // find(':input') ???
     var myUrl = $(this).attr('action');
     var myMethod = $(this).attr('method');
 
     debugger
 
-    $.ajax({
-      url: myUrl,
-      type: myMethod,
-      data: { article: formData }
+    request = $.ajax({
+      url: '/articles',
+      type: 'post',
+      dataType: 'JSON',
+      data: { "question": formData }
     });
+
+    request.done(function(){
+      console.log('winning');
+    });
+
+    request.fail(function(){
+      console.log('fail');
+    })
   });
 });
