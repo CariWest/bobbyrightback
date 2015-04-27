@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save!
-      # redirect around the website...
+      redirect_to root_path
     else
       # render sign up
     end
