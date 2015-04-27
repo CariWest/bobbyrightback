@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+
   resources :blog
+
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
 
   get '/register' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/welcome/index'
+  get 'welcome/index'
 
   root 'welcome#index'
 end
