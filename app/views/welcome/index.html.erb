@@ -1,2 +1,22 @@
 <h1>Bobby Right Back</h1>
-<h2>The Blog<h2>
+<h2>The Blog</h2>
+
+<p>
+  <a href='/register'>Register</a>
+</p>
+
+<p>
+  <a href='/login'>Log In</a>
+</p>
+
+<p>
+  <a href='/logout'>Log Out</a>
+</p>
+
+<p>
+  <% if current_user %>
+    Logged In
+  <% else %>
+    Not Logged In
+  <% end %>
+</p>
