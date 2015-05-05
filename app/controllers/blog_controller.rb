@@ -3,6 +3,7 @@ class BlogController < ApplicationController
   helper BlogHelper
 
   def index
+    @blog = Blog.last
   end
 
   def create
