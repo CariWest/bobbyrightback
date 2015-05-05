@@ -1,6 +1,5 @@
 class BlogController < ApplicationController
   # before_filter :authorize
-  helper BlogHelper
 
   def index
     @blog = Blog.last
