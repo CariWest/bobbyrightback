@@ -38,6 +38,11 @@ class BlogController < ApplicationController
   end
 
   def destroy
+    if current_blog.destroy
+      redirect_to blog_index_path
+    else
+      status 400
+    end
   end
 
   private
