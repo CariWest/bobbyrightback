@@ -1,3 +1,23 @@
 <%= markdown(@blog.title) %>
 <%= markdown(@blog.excerpt) %>
 <%= markdown(@blog.content) %>
+
+<p>
+  <a href='/'>Home</a>
+</p>
+
+<% if current_user %>
+  <p>
+    <%= link_to "New", new_blog_path  %>
+  </p>
+
+  <p>
+    <%= link_to "Edit", edit_blog_path(@blog) %>
+  </p>
+
+  <p>
+    <%= link_to "Delete", blog_path(@blog),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
