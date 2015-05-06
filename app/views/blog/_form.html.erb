@@ -1,0 +1,13 @@
+<div>
+  <%= form.text_field :title, size: '100', placeholder: "Title", value: @blog.title %>
+</div>
+
+<div>
+  <%= form.text_area :excerpt, size: '100x5', placeholder: "Excerpt", value: @blog.excerpt %>
+</div>
+
+<div>
+  <%= form.text_area :content, size: '100x12', placeholder: "Write your post here...", value: @blog.content %>
+</div>
+
+<%= form.submit "Save" %>
