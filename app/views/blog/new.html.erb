@@ -1,16 +1,1 @@
-<%= form_for @blog, url: { action: 'create' } do |f| %>
-<!-- Why do I need to specify the blog path? This seems wrong... -->
-  <div>
-    <%= f.text_field :title, size: '100', placeholder: "Title" %>
-  </div>
-
-  <div>
-    <%= f.text_area :excerpt, size: '100x5', placeholder: "Excerpt" %>
-  </div>
-
-  <div>
-    <%= f.text_area :content, size: '100x12', placeholder: "Write your post here..." %>
-  </div>
-
-  <%= f.submit "Publish" %>
-<% end %>
+<%= render 'form' %>
