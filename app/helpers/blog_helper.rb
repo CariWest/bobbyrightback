@@ -1,5 +1,4 @@
 module BlogHelper
-
   def markdown(text)
     options = {
       :disable_indented_code_blocks => true,

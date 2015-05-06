@@ -1,5 +1,6 @@
 class BlogController < ApplicationController
-  # before_filter :authorize
+  include SessionsHelper
+  before_filter :authorize, :except => [:index, :show]
 
   def index
     @blog = Blog.last
@@ -36,5 +37,4 @@ class BlogController < ApplicationController
   def blog_params
     params.require(:blog).permit(:title, :content, :excerpt)
   end
-
 end
