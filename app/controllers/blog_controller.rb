@@ -9,7 +9,7 @@ class BlogController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to blog_index_path
+      redirect_to blog_path(@blog)
     else
       status 400
     end
